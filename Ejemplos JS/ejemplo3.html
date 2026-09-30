@@ -1,0 +1,39 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de edad</title>
+</head>
+<body>
+    <h1> Calculadora de edad </h1>
+    <label for="nacimiento">Año de nacimiento:</label>
+    <input type="number" id="nacimiento">
+    <button id="calcular">Calcular Edad</button>
+    <p id="resultadoEdad"></p>
+
+    <script>
+
+        function calcularEdad(añoNacimiento){
+            const añoActual = new Date().getFullYear();
+            const edad = añoActual - añoNacimiento;
+            if (edad < 0){
+                return ("El año debe ser pasado, no futuro")
+            } else {
+                if (edad >= 120){
+                    return ("¿Estás seguro de ese año?")
+                } else {
+                    return (`Su edad es, aproximadamente, ${edad} años`)
+                }
+            }}
+
+            // Evento de clic en el botón
+            const boton = document.getElementById("calcular")
+            boton.addEventListener("click", function() {
+            const añoNacimiento = document.getElementById("nacimiento").value;
+            const resultado = calcularEdad(Number(añoNacimiento));
+            document.getElementById("resultadoEdad").textContent = resultado;
+            });
+        
+    </script>
+</body>
+</html>

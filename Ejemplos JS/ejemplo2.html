@@ -1,0 +1,25 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interacción con JavaScript</title>
+</head>
+<body>
+    <h1>Interacción con JavaScript</h1>
+      <button type="button" id="miBoton"> Haz clic aquí </button>
+      <p id="resultado"> Esperando clic... </p>
+
+      <script>
+        const boton = document.getElementById("miBoton");
+        const parrafo = document.getElementById("resultado");
+
+        boton.addEventListener("click", function() {
+            parrafo.textContent = "¡Has hecho clic en el botón!";
+            
+            parrafo.style.color = "blue";
+            parrafo.style.fontWeight = "bold";
+        });
+
+      </script>
+</body>
+</html>
